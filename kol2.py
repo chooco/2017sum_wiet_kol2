@@ -18,6 +18,9 @@
 class Diary:
 
 	def __init__(self, name, surname, attendance):
+		self.name = name
+		self.surname = surname
+		self.attendacne = attendance
 		self.student = []
 		self.student.append.(name + " " + surname)
         	self.student.append(attendance)
