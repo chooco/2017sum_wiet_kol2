@@ -20,7 +20,7 @@ class Diary:
 	def __init__(self, name, surname, attendance):
 		self.student = []
 		self.student.append.(name + " " + surname)
-        self.student.append(attendance)
+        	self.student.append(attendance)
 
 	def name(self):
 		return self.student[0]
