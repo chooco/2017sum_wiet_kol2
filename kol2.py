@@ -36,7 +36,7 @@ class Diary:
 		for i in self.student[2]:
 			avgerage += i
 		avgerage = avgverage/len(self.student[2])
-		return avg
+		return avgerage
 
 
 
