@@ -1,5 +1,4 @@
-#
-# Class diary  
+# Class diary
 #
 # Create program for handling lesson scores.
 # Use python to handle student (highscool) class scores, and attendance.
@@ -14,3 +13,30 @@
 # If you have enough courage and time, try storing (reading/writing) 
 # data in text files (YAML, JSON).
 # If you have even more courage, try implementing user interface.
+
+
+class Diary:
+
+	def __init__(self, name, surname, attendance):
+		self.student = []
+		self.student.append.(name + " " + surname)
+        self.student.append(attendance)
+
+	def name(self):
+		return self.student[0]
+
+	def attendance(self):
+		return self.student[1]
+
+	def scores(self):
+		return self.student[2]
+
+	def average(self):
+		average = 0
+		for i in self.student[2]:
+			avgerage += i
+		avgerage = avgverage/len(self.student[2])
+		return avg
+
+
+
