@@ -1,0 +1,97 @@
+{
+  "students": [
+    {
+      "name": "Klaudia",
+      "surname": "Popko",
+      "attendance": 5,
+      "subjects": [
+        {
+          "name": "Angiekski",
+          "grades": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "Matma",
+          "grades": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "Przyroda",
+          "grades": [
+            3,
+            3,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Anna",
+      "surname": "Jamróż",
+      "attendance": 3,
+      "subjects": [
+        {
+          "name": "Angiekski",
+          "grades": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "Matma",
+          "grades": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "Przyroda",
+          "grades": [
+            3,
+            3,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Krzysztof",
+      "surname": "Ibisz",
+      "attendance": 2,
+      "subjects": [
+        {
+          "name": "Angiekski",
+          "grades": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "Matma",
+          "grades": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "Przyroda",
+          "grades": [
+            3,
+            3,
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}
