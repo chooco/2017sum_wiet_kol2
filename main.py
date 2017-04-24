@@ -4,7 +4,7 @@
 # Create program for handling lesson scores.
 # Use python to handle student (highscool) class scores, and attendance.
 # Make it possible to:
-# - Get students total average score (average across classes)
+# - Get students to1tal average score (average across classes)
 # - get students average score in class
 # - hold students name and surname
 # - Count total attendance of student
@@ -34,7 +34,7 @@ def menu():
     elif choosen == '2':
         name = input("Enter the student name: ")
         surname = input("Enter the student surname: ")
-        if not diary.val_student(name, surname):
+        if not diary.val_student(diary, name, surname):
             print("Student {} {} doesnt exist in class".format(name, surname))
             return
     choosen_subject = input ("Enter subject:")

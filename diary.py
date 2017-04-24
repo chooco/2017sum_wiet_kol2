@@ -22,29 +22,29 @@ import json
 class Diary:
 
 	def __init__(self, path_to_file):
-		with open('dairy.json', 'r') as dairy:
-			self.diary = json.load(dairy)
+		with open(path_to_file, 'r') as file:
+			self.diary = json.load(file)
 
 	def val_student(self, name, surname):
-		for person in self.dairy['students']:
-			if person['name'] == name and person['surname'] == surname:
+		for person in self.diary["students"]:
+			if person["name"] == name and person["surname"] == surname:
 				return True
 		return False
 
 	def val_subject(self, choosen_subject):
-		for person in self.dairy['students']:
+		for person in self.diary['students']:
 			for subject in person['subjects']:
 				if subject['name'] == choosen_subject:
 					return True
 		return False
 
 	def attendance(self, name, surname):
-		for person in self.dairy['students']:
+		for person in self.diary['students']:
 			if person['name'] == name and person['surname'] == surname:
-				return self.dairy['attendance']
+				return self.diary['attendance']
 
 	def student_average_scores(self, name, surname, choosen_subject=None):
-		for person in self.dairy['students']:
+		for person in self.diary['students']:
 			if person['name'] == name and person['surname'] == surname:
 				student_average_score = 0
 				for subject in person['subjects']:
@@ -61,12 +61,12 @@ class Diary:
 
 	def total_average(self):
 		total_avg = 0
-		for person in self.dairy['students']:
+		for person in self.diary["students"]:
 			class_avg = 0
 			for subject in person['subjects']:
 				student_avg = 0
 				student_avg += sum(subject['grades']) / len(subject['grades'])
 			class_avg += student_avg
 			class_avg /= len(person['subjects'])
-		total_avg /= len(self.dairy['students'])
+		total_avg /= len(self.diary['students'])
 		return total_avg
