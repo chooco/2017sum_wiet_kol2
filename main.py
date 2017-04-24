@@ -1,3 +1,4 @@
+#
 # Class diary
 #
 # Create program for handling lesson scores.
@@ -13,60 +14,50 @@
 # If you have enough courage and time, try storing (reading/writing)
 # data in text files (YAML, JSON).
 # If you have even more courage, try implementing user interface.
-# one class, all data in dictionary,  use optaparse or avgparse, poython module module.py -h
-# store data in python as json dump
-# path to json dump in argument, print, show dairy
 
-import json
+import argparse
+from diary import Diary
 
-class Diary:
+def menu():
+    print(30 * '-')
+    print("   M A I N - M E N U   ")
+    print(30 * '-')
+    print("\t 1. Get total average score")
+    print("\t 2. Get student average score")
+    print("\t 3. Get student attendance")
+    print("\t Exit - Ctrl^C")
 
-	def __init__(self, path_to_file):
-		with open('dairy.json', 'r') as dairy:
-			self.diary = json.load(dairy)
+    choosen = input()
 
-	def attendance(self, name, surname):
-		for person in self.dairy['students']:
-			if person['name'] == name and person['surname'] == surname:
-				return self.dairy['attendance']
+    if choosen == '1':
+        print("Total avg score: {:.2f} ".format(diary.total_average()))
+    elif choosen == '2':
+        name = input("Enter the student name: ")
+        surname = input("Enter the student surname: ")
+        if not diary.val_student(name, surname):
+            print("Student {} {} doesnt exist in class".format(name, surname))
+            return
+    choosen_subject = input ("Enter subject:")
+    if choosen_subject:
+        if not diary.val_subject(choosen_subject):
+            print("Given subject dooesnt exist")
+            return
+        print ("Avg for student {} {} for subject {}: {} ".format(name,surname, choosen_subject, diary.student_average_scores()))
+        return
 
-	def student_average_scores(self, name, surname, choosen_subject=None):
-		for person in self.dairy['students']:
-			if person['name'] == name and person['surname'] == surname:
-				student_average_score = 0
-				for subject in person['subjects']:
-					if choosen_subject is not None:
-						if subject['name'] == choosen_subject:
-							return sum(subject['grades'])/len(subject['grades'])
-						else:
-							continue
-					else:
-						student_average_score += sum(subject['grades'])/len(subject['grades'])
-				student_average_score /= len(person['subjects'])
-				return student_average_score
+    elif choosen =='3':
+        name = input("Enter the student name: ")
+        surname = input("Enter the student surname: ")
+        if not diary.val_student(name, surname):
+            print("Student {} {} doesnt exist in class".format(name, surname))
+        else:
+            print("Attendance for student {} {} is {} ".format(name, surname, diary.attendance()))
+            return
 
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('path_to_file')
+    args = parser.parse_args()
 
-	def total_average(self):
-		total_avg = 0
-		for person in self.dairy['students']:
-			class_avg = 0
-			for subject in person['subjects']:
-				student_avg = 0
-				student_avg += sum(subject['grades']) / len(subject['grades'])
-			class_avg += student_avg
-			class_avg /= len(person['subjects'])
-		total_avg /= len(self.dairy['students'])
-		return total_avg
-
-	def val_student(self, name, surname):
-		for person in self.dairy['students']:
-			if person['name'] == name and person['surname'] == surname:
-				return True
-		return False
-
-	def val_subject(self, choosen_subject):
-		for person in self.dairy['students']:
-			for subject in person['subjects']:
-				if subject['name'] == choosen_subject:
-					return True
-		return False
+    diary = Diary(args.path_to_file)
+    menu()
