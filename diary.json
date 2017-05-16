@@ -1,97 +1,297 @@
 {
-  "students": [
-    {
-      "name": "Klaudia",
-      "surname": "Popko",
-      "attendance": 5,
-      "subjects": [
-        {
-          "name": "Angiekski",
-          "grades": [
-            3,
-            3,
-            2
-          ]
-        },
-        {
-          "name": "Matma",
-          "grades": [
-            3,
-            3,
-            2
-          ]
-        },
-        {
-          "name": "Przyroda",
-          "grades": [
-            3,
-            3,
-            2
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Anna",
-      "surname": "Jamróż",
-      "attendance": 3,
-      "subjects": [
-        {
-          "name": "Angiekski",
-          "grades": [
-            3,
-            3,
-            2
-          ]
-        },
-        {
-          "name": "Matma",
-          "grades": [
-            3,
-            3,
-            2
-          ]
-        },
-        {
-          "name": "Przyroda",
-          "grades": [
-            3,
-            3,
-            2
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Krzysztof",
-      "surname": "Ibisz",
-      "attendance": 2,
-      "subjects": [
-        {
-          "name": "Angiekski",
-          "grades": [
-            3,
-            3,
-            2
-          ]
-        },
-        {
-          "name": "Matma",
-          "grades": [
-            3,
-            3,
-            2
-          ]
-        },
-        {
-          "name": "Przyroda",
-          "grades": [
-            3,
-            3,
-            2
-          ]
-        }
-      ]
+  "diary": {
+    "classes": {
+      "1A": {
+        "students": [
+          {
+            "name": "Klaudia",
+            "surname": "Popko",
+            "subjects": {
+              "Angielski": {
+                "grades": [
+                  5,
+                  4,
+                  2,
+                  3
+                ]
+              },
+              "Matematyka": {
+                "grades": [
+                  5,
+                  4,
+                  2,
+                  3
+                ]
+              },
+              "Przyroda": {
+                "grades": [
+                  4,
+                  4,
+                  4,
+                  3
+                ]
+              }
+            },
+            "attendance": {
+              "present": 20,
+              "absent": 2
+            }
+          },
+          {
+            "name": "Jerzy",
+            "surname": "Adamowicz",
+            "subjects": {
+              "Angielski": {
+                "grades": [
+                  5,
+                  4,
+                  4,
+                  4
+                ]
+              },
+              "Matematyka": {
+                "grades": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "Przyroda": {
+                "grades": [
+                  4,
+                  4,
+                  1,
+                  1
+                ]
+              }
+            },
+            "attendance": {
+              "present": 20,
+              "absent": 0
+            }
+          }
+        ]
+      },
+      "1B": {
+        "students": [
+          {
+            "name": "Damian",
+            "surname": "Kulig",
+            "subjects": {
+              "Angielski": {
+                "grades": [
+                  5,
+                  4,
+                  2,
+                  3
+                ]
+              },
+              "Matematyka": {
+                "grades": [
+                  5,
+                  4,
+                  2,
+                  3
+                ]
+              },
+              "Przyroda": {
+                "grades": [
+                  4,
+                  4,
+                  4,
+                  3
+                ]
+              }
+            },
+            "attendance": {
+              "present": 20,
+              "absent": 2
+            }
+          },
+          {
+            "name": "Kinga",
+            "surname": "Preiz",
+            "subjects": {
+              "Angielski": {
+                "grades": [
+                  5,
+                  4,
+                  4,
+                  4
+                ]
+              },
+              "Matematyka": {
+                "grades": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "Przyroda": {
+                "grades": [
+                  4,
+                  4,
+                  1,
+                  1
+                ]
+              }
+            },
+            "attendance": {
+              "present": 20,
+              "absent": 0
+            }
+          }
+        ]
+      },
+      "1C": {
+        "students": [
+          {
+            "name": "Marzena",
+            "surname": "Mega",
+            "subjects": {
+              "Angielski": {
+                "grades": [
+                  5,
+                  4,
+                  2,
+                  3
+                ]
+              },
+              "Matematyka": {
+                "grades": [
+                  5,
+                  4,
+                  2,
+                  3
+                ]
+              },
+              "Przyroda": {
+                "grades": [
+                  4,
+                  4,
+                  4,
+                  3
+                ]
+              }
+            },
+            "attendance": {
+              "present": 20,
+              "absent": 2
+            }
+          },
+          {
+            "name": "Jerzy",
+            "surname": "Skolimowski",
+            "subjects": {
+              "Angielski": {
+                "grades": [
+                  5,
+                  4,
+                  4,
+                  4
+                ]
+              },
+              "Matematyka": {
+                "grades": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "Przyroda": {
+                "grades": [
+                  4,
+                  4,
+                  1,
+                  1
+                ]
+              }
+            },
+            "attendance": {
+              "present": 20,
+              "absent": 0
+            }
+          }
+        ]
+      },
+      "1D": {
+        "students": [
+          {
+            "name": "Wronika",
+            "surname": "Nowak",
+            "subjects": {
+              "Angielski": {
+                "grades": [
+                  5,
+                  4,
+                  2,
+                  3
+                ]
+              },
+              "Matematyka": {
+                "grades": [
+                  5,
+                  4,
+                  2,
+                  3
+                ]
+              },
+              "Przyroda": {
+                "grades": [
+                  4,
+                  4,
+                  4,
+                  3
+                ]
+              }
+            },
+            "attendance": {
+              "present": 20,
+              "absent": 2
+            }
+          },
+          {
+            "name": "Anna",
+            "surname": "Mac",
+            "subjects": {
+              "Angielski": {
+                "grades": [
+                  5,
+                  4,
+                  4,
+                  4
+                ]
+              },
+              "Matematyka": {
+                "grades": [
+                  5,
+                  5,
+                  5,
+                  5
+                ]
+              },
+              "Przyroda": {
+                "grades": [
+                  4,
+                  4,
+                  1,
+                  1
+                ]
+              }
+            },
+            "attendance": {
+              "present": 20,
+              "absent": 0
+            }
+          }
+        ]
+      }
     }
-  ]
+  }
 }
+
+
+

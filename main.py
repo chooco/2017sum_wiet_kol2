@@ -1,58 +1,55 @@
-#
-# Class diary
-#
-# Create program for handling lesson scores.
-# Use python to handle student (highscool) class scores, and attendance.
-# Make it possible to:
-# - Get students to1tal average score (average across classes)
-# - get students average score in class
-# - hold students name and surname
-# - Count total attendance of student
-# The default interface for interaction should be python interpreter.
-# Please, use your imagination and create more functionalities.
-# Your project should be able to handle entire school.
-# If you have enough courage and time, try storing (reading/writing)
-# data in text files (YAML, JSON).
-# If you have even more courage, try implementing user interface.
-
 import argparse
 from diary import Diary
 
+def sep():
+	print(30 * '-')
+
 def menu():
-    print(30 * '-')
+    sep()
     print("   M A I N - M E N U   ")
-    print(30 * '-')
-    print("\t 1. Get total average score")
-    print("\t 2. Get student average score")
-    print("\t 3. Get student attendance")
-    print("\t Exit - Ctrl^C")
+    sep()
+    print("\t 1. Get student average score")
+    print("\t 2. Get student attendance")
+    print("\t 3. Get class avg score")
+    print("\t 4. Find the best student")
+    print("\t 5. Print classes")
+    print("\t Exit - 0")
 
-    choosen = input()
+class MainMenu:
+    @staticmethod
+    def main_actions():
+        while True:
+            choosen = raw_input()
 
-    if choosen == '1':
-        print("Total avg score: {:.2f} ".format(diary.total_average()))
-    elif choosen == '2':
-        name = input("Enter the student name: ")
-        surname = input("Enter the student surname: ")
-        if not diary.val_student(diary, name, surname):
-            print("Student {} {} doesnt exist in class".format(name, surname))
-            return
-    choosen_subject = input ("Enter subject:")
-    if choosen_subject:
-        if not diary.val_subject(choosen_subject):
-            print("Given subject dooesnt exist")
-            return
-        print ("Avg for student {} {} for subject {}: {} ".format(name,surname, choosen_subject, diary.student_average_scores()))
-        return
+            if choosen == '1':
+                diary.show_students_average_grades()
+                sep()
+            elif choosen == '2':
+                MainMenu.choose_student_avg(diary)
+            elif choosen == '3':
+                diary.show_average_grades_for_classes()
+            elif choosen == '4':
+                student_record = diary.the_best_student()
+                student = student_record['student']
+                print "The best student is {} {}. And average score is {:f}".format(
+                    student['name'], student['surname'], student_record['average'])
+            elif choosen == '5':
+                diary.print_classes()
+            elif choosen == '0':
+                exit(0)
 
-    elif choosen =='3':
-        name = input("Enter the student name: ")
-        surname = input("Enter the student surname: ")
-        if not diary.val_student(name, surname):
-            print("Student {} {} doesnt exist in class".format(name, surname))
+    @staticmethod
+    def choose_student_avg(diary):
+        name = raw_input("Type name: ")
+        surname = raw_input("Type surname: ")
+        classes = raw_input("Type class: ")
+        sep()
+        attendance = diary.attendance_students(name, surname, classes)
+        if attendance == -1:
+            print "Student not found"
         else:
-            print("Attendance for student {} {} is {} ".format(name, surname, diary.attendance()))
-            return
+            print "Overall attendance for {} {} is {:f}%".format(name, surname, attendance)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -61,3 +58,4 @@ if __name__ == "__main__":
 
     diary = Diary(args.path_to_file)
     menu()
+    MainMenu.main_actions()
