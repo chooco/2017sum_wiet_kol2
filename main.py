@@ -48,7 +48,7 @@ class MainMenu:
         if attendance == -1:
             print "Student not found"
         else:
-            print "Overall attendance for {} {} is {:f}%".format(name, surname, attendance)
+            print "Attendance for {} {} is {:f}%".format(name, surname, attendance)
 
 
 if __name__ == "__main__":
